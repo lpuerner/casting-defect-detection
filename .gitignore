@@ -1,0 +1,7 @@
+casting_data/
+casting_512x512/
+cache/
+results/smoke/
+*.pt
+__pycache__/
+.ipynb_checkpoints/

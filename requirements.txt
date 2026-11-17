@@ -1,0 +1,10 @@
+# PyTorch CPU build: pip install torch==2.7.0 torchvision==0.22.0 --index-url https://download.pytorch.org/whl/cpu
+torch==2.7.0
+torchvision==0.22.0
+scikit-learn==1.6.1
+scikit-image==0.25.2
+numpy
+pandas
+matplotlib
+pillow
+jupyter

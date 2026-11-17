@@ -1,0 +1,114 @@
+
+>>> C:\Users\Lenovo\Desktop\Claude cast\src\baseline.py --split clean
+features: 1774 dims, 32.5s
+[hog_logreg | clean] AUC=0.9934  default: acc=0.9538 recall=0.9658 FA=0.0641  |  high-recall thr: recall=1.0000 FA=0.2308 missed=0
+[hog_svm_rbf | clean] AUC=0.9997  default: acc=0.9897 recall=0.9915 FA=0.0128  |  high-recall thr: recall=0.9915 FA=0.0256 missed=1
+
+>>> C:\Users\Lenovo\Desktop\Claude cast\src\train_cnn.py --split clean --epochs 30
+SmallCNN: 210,737 parameters, 128px, 30 epochs
+  epoch 1/30  loss=0.5564  val_auc=0.8570  val_acc=0.4154  (21s)
+  epoch 2/30  loss=0.5072  val_auc=0.8711  val_acc=0.5795  (21s)
+  epoch 3/30  loss=0.4924  val_auc=0.8744  val_acc=0.7897  (26s)
+  epoch 4/30  loss=0.4365  val_auc=0.9150  val_acc=0.7795  (27s)
+  epoch 5/30  loss=0.4225  val_auc=0.9345  val_acc=0.6000  (22s)
+  epoch 6/30  loss=0.4071  val_auc=0.9483  val_acc=0.6051  (23s)
+  epoch 7/30  loss=0.2889  val_auc=0.9848  val_acc=0.6513  (21s)
+  epoch 8/30  loss=0.2375  val_auc=0.9829  val_acc=0.8615  (20s)
+  epoch 9/30  loss=0.1649  val_auc=0.9886  val_acc=0.9282  (21s)
+  epoch 10/30  loss=0.1379  val_auc=0.9968  val_acc=0.9641  (21s)
+  epoch 11/30  loss=0.1750  val_auc=0.9879  val_acc=0.6667  (20s)
+  epoch 12/30  loss=0.1631  val_auc=0.9970  val_acc=0.8667  (24s)
+  epoch 13/30  loss=0.1139  val_auc=0.9973  val_acc=0.9897  (22s)
+  epoch 14/30  loss=0.0748  val_auc=0.9985  val_acc=0.9846  (20s)
+  epoch 15/30  loss=0.0672  val_auc=0.9995  val_acc=0.9949  (23s)
+  epoch 16/30  loss=0.0528  val_auc=0.9986  val_acc=0.9897  (20s)
+  epoch 17/30  loss=0.0536  val_auc=0.9990  val_acc=0.9846  (21s)
+  epoch 18/30  loss=0.0441  val_auc=0.9980  val_acc=0.9949  (28s)
+  epoch 19/30  loss=0.0450  val_auc=0.9965  val_acc=0.9949  (21s)
+  epoch 20/30  loss=0.0424  val_auc=0.9942  val_acc=0.9846  (21s)
+  epoch 21/30  loss=0.0552  val_auc=0.9999  val_acc=0.9949  (21s)
+  epoch 22/30  loss=0.0307  val_auc=0.9980  val_acc=0.9949  (21s)
+  epoch 23/30  loss=0.0317  val_auc=0.9977  val_acc=0.9949  (22s)
+  epoch 24/30  loss=0.0261  val_auc=0.9993  val_acc=0.9949  (24s)
+  epoch 25/30  loss=0.0226  val_auc=0.9992  val_acc=0.9949  (22s)
+  epoch 26/30  loss=0.0253  val_auc=0.9976  val_acc=0.9949  (22s)
+  epoch 27/30  loss=0.0219  val_auc=0.9992  val_acc=0.9949  (21s)
+  epoch 28/30  loss=0.0272  val_auc=0.9995  val_acc=0.9949  (21s)
+  epoch 29/30  loss=0.0263  val_auc=0.9996  val_acc=0.9949  (21s)
+  epoch 30/30  loss=0.0203  val_auc=0.9995  val_acc=0.9949  (22s)
+[small_cnn | clean] AUC=0.9966  default: acc=0.9744 recall=0.9573 FA=0.0000  |  high-recall thr: recall=0.9316 FA=0.0000 missed=8
+
+>>> C:\Users\Lenovo\Desktop\Claude cast\src\transfer.py --split clean --epochs 8
+[resnet18_frozen_logreg | clean] AUC=0.9950  default: acc=0.9692 recall=0.9829 FA=0.0513  |  high-recall thr: recall=0.9829 FA=0.0513 missed=2
+Fine-tuning ResNet18 layer4+fc: 8,394,241 trainable params, 160px, 8 epochs
+  epoch 1/8  loss=0.3165  val_auc=0.9957  val_acc=0.9538  (43s)
+  epoch 2/8  loss=0.1157  val_auc=0.9974  val_acc=0.9641  (41s)
+  epoch 3/8  loss=0.0603  val_auc=0.9993  val_acc=0.9795  (75s)
+  epoch 4/8  loss=0.0479  val_auc=0.9999  val_acc=0.9795  (59s)
+  epoch 5/8  loss=0.0430  val_auc=1.0000  val_acc=0.9897  (66s)
+  epoch 6/8  loss=0.0288  val_auc=1.0000  val_acc=1.0000  (81s)
+  epoch 7/8  loss=0.0201  val_auc=1.0000  val_acc=0.9897  (83s)
+  epoch 8/8  loss=0.0155  val_auc=1.0000  val_acc=0.9897  (81s)
+[resnet18_finetune | clean] AUC=0.9999  default: acc=0.9795 recall=0.9658 FA=0.0000  |  high-recall thr: recall=0.9658 FA=0.0000 missed=4
+
+>>> C:\Users\Lenovo\Desktop\Claude cast\src\anomaly.py --split clean
+memory bank: 30,129 patches from 363 ok images (26s)
+[patchcore_anomaly | clean] AUC=0.9504  default: acc=0.8000 recall=0.6752 FA=0.0128  |  high-recall thr: recall=0.9915 FA=0.6538 missed=1
+
+>>> C:\Users\Lenovo\Desktop\Claude cast\src\baseline.py --split official
+features: 1774 dims, 123.0s
+[hog_logreg | official] AUC=0.9927  default: acc=0.9622 recall=0.9757 FA=0.0611  |  high-recall thr: recall=0.9845 FA=0.1794 missed=7
+[hog_svm_rbf | official] AUC=0.9999  default: acc=0.9930 recall=0.9912 FA=0.0038  |  high-recall thr: recall=0.9912 FA=0.0038 missed=4
+
+>>> C:\Users\Lenovo\Desktop\Claude cast\src\train_cnn.py --split official
+SmallCNN: 210,737 parameters, 128px, 10 epochs
+  epoch 1/10  loss=0.3243  val_auc=0.9774  val_acc=0.7970  (192s)
+  epoch 2/10  loss=0.1612  val_auc=0.9996  val_acc=0.6653  (140s)
+  epoch 3/10  loss=0.0792  val_auc=0.9990  val_acc=0.9779  (144s)
+  epoch 4/10  loss=0.0674  val_auc=0.9999  val_acc=0.9970  (131s)
+  epoch 5/10  loss=0.0357  val_auc=0.9998  val_acc=0.9899  (127s)
+  epoch 6/10  loss=0.0385  val_auc=1.0000  val_acc=0.9698  (173s)
+  epoch 7/10  loss=0.0238  val_auc=1.0000  val_acc=0.9990  (185s)
+  epoch 8/10  loss=0.0209  val_auc=1.0000  val_acc=0.9990  (164s)
+  epoch 9/10  loss=0.0204  val_auc=1.0000  val_acc=0.9990  (159s)
+  epoch 10/10  loss=0.0166  val_auc=1.0000  val_acc=0.9990  (154s)
+[small_cnn | official] AUC=1.0000  default: acc=0.9524 recall=0.9249 FA=0.0000  |  high-recall thr: recall=0.9868 FA=0.0000 missed=6
+
+>>> C:\Users\Lenovo\Desktop\Claude cast\src\transfer.py --split official
+[resnet18_frozen_logreg | official] AUC=0.9985  default: acc=0.9860 recall=0.9823 FA=0.0076  |  high-recall thr: recall=0.9823 FA=0.0076 missed=8
+Fine-tuning ResNet18 layer4+fc: 8,394,241 trainable params, 160px, 3 epochs
+  epoch 1/3  loss=0.0659  val_auc=0.9996  val_acc=0.9970  (333s)
+  epoch 2/3  loss=0.0231  val_auc=0.9999  val_acc=0.9990  (451s)
+  epoch 3/3  loss=0.0140  val_auc=0.9999  val_acc=0.9980  (569s)
+[resnet18_finetune | official] AUC=1.0000  default: acc=0.9972 recall=0.9956 FA=0.0000  |  high-recall thr: recall=0.9956 FA=0.0000 missed=2
+
+>>> C:\Users\Lenovo\Desktop\Claude cast\src\anomaly.py --split official
+memory bank: 31,772 patches from 2444 ok images (192s)
+[patchcore_anomaly | official] AUC=0.9608  default: acc=0.8559 recall=0.8102 FA=0.0649  |  high-recall thr: recall=0.9912 FA=0.4351 missed=4
+# Results
+
+Default = standard threshold (0.5; anomaly: 5 % false alarms on validation ok parts).
+High-recall = threshold chosen on validation so that defect recall >= 99%, then applied unchanged to test.
+
+## Split: clean (n_test = 195)
+
+| Method | ROC-AUC | Acc | Recall def | Precision def | F1 def | False alarms | HR recall def | HR false alarms | HR missed | Train s |
+|---|---|---|---|---|---|---|---|---|---|---|
+| hog_logreg | 0.9934 | 0.9538 | 0.9658 | 0.9576 | 0.9617 | 0.0641 | 1.0000 | 0.2308 | 0 | 0.7 |
+| hog_svm_rbf | 0.9997 | 0.9897 | 0.9915 | 0.9915 | 0.9915 | 0.0128 | 0.9915 | 0.0256 | 1 | 1.3 |
+| small_cnn | 0.9966 | 0.9744 | 0.9573 | 1.0000 | 0.9782 | 0.0000 | 0.9316 | 0.0000 | 8 | 667.8 |
+| resnet18_frozen_logreg | 0.9950 | 0.9692 | 0.9829 | 0.9664 | 0.9746 | 0.0513 | 0.9829 | 0.0513 | 2 | 36.0 |
+| resnet18_finetune | 0.9999 | 0.9795 | 0.9658 | 1.0000 | 0.9826 | 0.0000 | 0.9658 | 0.0000 | 4 | 549.9 |
+| patchcore_anomaly | 0.9504 | 0.8000 | 0.6752 | 0.9875 | 0.8020 | 0.0128 | 0.9915 | 0.6538 | 1 | 173.9 |
+
+## Split: official (n_test = 715)
+
+| Method | ROC-AUC | Acc | Recall def | Precision def | F1 def | False alarms | HR recall def | HR false alarms | HR missed | Train s |
+|---|---|---|---|---|---|---|---|---|---|---|
+| hog_logreg | 0.9927 | 0.9622 | 0.9757 | 0.9651 | 0.9704 | 0.0611 | 0.9845 | 0.1794 | 7 | 1.3 |
+| hog_svm_rbf | 0.9999 | 0.9930 | 0.9912 | 0.9978 | 0.9945 | 0.0038 | 0.9912 | 0.0038 | 4 | 38.2 |
+| small_cnn | 1.0000 | 0.9524 | 0.9249 | 1.0000 | 0.9610 | 0.0000 | 0.9868 | 0.0000 | 6 | 1595.2 |
+| resnet18_frozen_logreg | 0.9985 | 0.9860 | 0.9823 | 0.9955 | 0.9889 | 0.0076 | 0.9823 | 0.0076 | 8 | 299.4 |
+| resnet18_finetune | 1.0000 | 0.9972 | 0.9956 | 1.0000 | 0.9978 | 0.0000 | 0.9956 | 0.0000 | 2 | 1448.9 |
+| patchcore_anomaly | 0.9608 | 0.8559 | 0.8102 | 0.9557 | 0.8769 | 0.0649 | 0.9912 | 0.4351 | 4 | 1090.8 |
+
